@@ -24,8 +24,12 @@ for i in range(3):
   solution += F2LSolver.F2LSolver(cube).solution()
   solution += OLLSolver.OLLSolver(cube).solution()
   plls.append(cube.to_naive_cube().get_cube())
+  utils.pprint(cube)
+  print(plls[-1])
+  print(f'{plls[-1][9:12]}  {plls[-1][18:21]}  {plls[-1][27:30]}')
+  orientation = PLLSolver.PLLSolver(cube).get_orientations(cube)
+  print(orientation)
   solution += PLLSolver.PLLSolver(cube).solution()
-  # utils.pprint(cube)
   times.append(time.time() - start)
   
 print(plls)
